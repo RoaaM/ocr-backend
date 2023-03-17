@@ -113,7 +113,7 @@ async def update_user(id: str, user: UpdateUserModel = Body(...)):
     if (existing_user := await db["users"].find_one({"_id": id})) is not None:
         return existing_user
 
-    raise HTTPException(status_code=404, detail=f"Student {id} not found")
+    raise HTTPException(status_code=404, detail=f"User {id} not found")
 
 
 @app.delete("/users/{id}", response_description="Delete a user")
@@ -123,4 +123,4 @@ async def delete_user(id: str):
     if delete_result.deleted_count == 1:
         return Response(status_code=status.HTTP_204_NO_CONTENT)
 
-    raise HTTPException(status_code=404, detail=f"Student {id} not found")
+    raise HTTPException(status_code=404, detail=f"User {id} not found")
