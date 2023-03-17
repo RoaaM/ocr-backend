@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, EmailStr
 from bson import ObjectId
 from typing import Optional, List
 import motor.motor_asyncio
-# import bcrypt
+
 
 mongodb_url = 'mongodb+srv://employee:1234@atlascluster.v4i2hkf.mongodb.net/test'
 
