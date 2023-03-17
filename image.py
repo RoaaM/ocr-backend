@@ -89,7 +89,7 @@ async def show_image(id: str):
     if (image := await db["images"].find_one({"_id": id})) is not None:
         return image
 
-    raise HTTPException(status_code=404, detail=f"Student {id} not found")
+    raise HTTPException(status_code=404, detail=f"image {id} not found")
 
 
 @app.put("/images/{id}", response_description="Update a image", response_model=ImageModel)
